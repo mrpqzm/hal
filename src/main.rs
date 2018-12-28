@@ -49,6 +49,7 @@ fn main() {
 		.setting(clap::AppSettings::AllArgsOverrideSelf)
 		.subcommand(cmd::address::subcommand())
 		.subcommand(cmd::tx::subcommand())
+		.subcommand(cmd::psbt::subcommand())
 		.subcommand(cmd::script::subcommand())
 		.subcommand(cmd::bip32::subcommand())
 		.arg(
@@ -70,6 +71,7 @@ fn main() {
 	match matches.subcommand() {
 		("address", Some(ref m)) => cmd::address::execute(&m),
 		("bip32", Some(ref m)) => cmd::bip32::execute(&m),
+		("psbt", Some(ref m)) => cmd::psbt::execute(&m),
 		("script", Some(ref m)) => cmd::script::execute(&m),
 		("tx", Some(ref m)) => cmd::tx::execute(&m),
 		(c, _) => println!("command {} unknown", c),

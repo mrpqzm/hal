@@ -6,6 +6,7 @@ extern crate serde;
 
 pub mod address;
 pub mod bip32;
+pub mod psbt;
 pub mod tx;
 
 /// Utility struct to serialize byte strings as hex.
